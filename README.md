@@ -1,0 +1,1 @@
+# zshr_status

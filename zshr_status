@@ -90,16 +90,19 @@ source $ZSH/oh-my-zsh.sh
 
 export TERM="xterm-color"							# Getting 256 colors in linux
 export CLICOLOR=1									# Colored ls
-export LSCOLORS=FxFxCxDxBxegedabagacad				# Choosing ls color // director : bold magenta			
+export LSCOLORS=FxFxCxDxBxegedabagacad				# Choosing ls color // director : bold magenta
 export GREP_OPTIONS='--color=auto'					# grep color option
-alias ls="ls -GFh"									# colored directory in ls -G //	
+alias ls="ls -GFh"									# colored directory in ls -G //
 alias ll="ls -lv"									#
 alias acm='cd /users/jjun/dropbox/acm; ll'			# cd acm directory
 alias pb='_(){ mkdir $1; cd $1; touch $1.cpp;}; _'	# make directory, move in, make .cpp
 function cd { builtin cd $* && pwd && ls -CF; }		# when you use cd, you can check current location, and file
-alias c++='_() { g++ -o $1 $1.cpp ; ./$1;}; _'		# g++ -o
-alias c++11='_() { g++ -std=c++1y -o $1 $1.cpp ; ./$1;}; _'
-alias v='_() { vi $1.cpp ;}; _'						# vi .cpp
+alias c++='_() { g++ -o run *.cpp ; ./run;}; _'		# g++ -o
+alias c++11='_() { g++ -std=c++1y -o run *.cpp ; ./run;}; _'
+alias v='_() { vi *.cpp ;}; _'						# vi .cpp
 alias b='cd ..; ll'									# back to previous directory
 alias CS='cd /users/jjun/dropbox/CS_Pre_6; ll'		# cd CS directory
-alias cl="clear"									# clear
+alias cl="clear"		# clear
+alias SG=' cd /users/jjun/dropbox/algorithm/Algorithm_Lecture; ll'   #cd algorithm lecture directory
+alias cpcl='_() { cat *.cpp | pbcopy;}; _'      #.cpp file copy to clipboard   #copy .cpp to clipboard
+alias IM=' cd /users/jjun/dropbox/CS_imm_3; ll'		# cd Immersive directory

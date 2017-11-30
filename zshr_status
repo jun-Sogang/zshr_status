@@ -90,19 +90,39 @@ source $ZSH/oh-my-zsh.sh
 
 export TERM="xterm-color"							# Getting 256 colors in linux
 export CLICOLOR=1									# Colored ls
-export LSCOLORS=FxFxCxDxBxegedabagacad				# Choosing ls color // director : bold magenta
+export LSCOLORS=FxFxCxDxBxegedabagacad				# Choosing ls color // director : bold magenta			
 export GREP_OPTIONS='--color=auto'					# grep color option
-alias ls="ls -GFh"									# colored directory in ls -G //
+export NODE_PATH="/usr/local/lib/node_modules"
+alias ls="ls -GFh"									# colored directory in ls -G //	
 alias ll="ls -lv"									#
-alias acm='cd /users/jjun/dropbox/acm; ll'			# cd acm directory
+alias acm='cd /users/jjun/dropbox/Coding/acm; ll'			# cd acm directory
 alias pb='_(){ mkdir $1; cd $1; touch $1.cpp;}; _'	# make directory, move in, make .cpp
 function cd { builtin cd $* && pwd && ls -CF; }		# when you use cd, you can check current location, and file
 alias c++='_() { g++ -o run *.cpp ; ./run;}; _'		# g++ -o
 alias c++11='_() { g++ -std=c++1y -o run *.cpp ; ./run;}; _'
 alias v='_() { vi *.cpp ;}; _'						# vi .cpp
 alias b='cd ..; ll'									# back to previous directory
-alias CS='cd /users/jjun/dropbox/CS_Pre_6; ll'		# cd CS directory
+alias CS='cd /users/jjun/dropbox/Coding/Codestates; ll'		# cd Codestates directory
 alias cl="clear"		# clear
-alias SG=' cd /users/jjun/dropbox/algorithm/Algorithm_Lecture; ll'   #cd algorithm lecture directory
-alias cpcl='_() { cat *.cpp | pbcopy;}; _'      #.cpp file copy to clipboard   #copy .cpp to clipboard
-alias IM=' cd /users/jjun/dropbox/CS_imm_3; ll'		# cd Immersive directory
+alias SG=' cd /users/jjun/dropbox/Sogang/2017-2; ll'
+alias 3W=' cd /Users/JJun/Dropbox/Coding/3WALS; ll'
+alias cpcl='_() { cat *.cpp | pbcopy;}; _'      #.cpp file copy to clipboard
+alias IM=' cd /users/jjun/dropbox/Coding/CS_imm_3; ll'
+alias T?=' cd /users/jjun/dropbox/Coding/study/today; ll'
+alias lint=' node ./node_modules/eslint/bin/eslint.js --fix .; '
+alias lint.=' node ../node_modules/eslint/bin/eslint.js --fix .; '
+alias airbnb=' echo {\"extends\":\"airbnb\"} > .eslintrc; setAirbnbModules ' 
+function setAirbnbModules {
+	(
+	  export PKG=eslint-config-airbnb;
+	    npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+		)
+}
+alias CSE=' cd /users/jjun/dropbox/CSE-University; ll'
+alias atm=' cd /users/jjun/documents/inspirmitta/atmosphere; ll'
+alias rmBundle='rm -rf /users/jjun/documents/inspirmitta/atmosphere/ios/build'
+alias dc=' cd /users/jjun/dropbox/Coding/dailyCoding; ll'
+alias CIU=' cd /users/jjun/dropbox/CSE-University/coding-interview-university; ll'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
